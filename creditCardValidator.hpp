@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <regex>
 
 class CreditCard {
     long intCardNumber_;
@@ -19,6 +20,6 @@ public:
 
 
     bool checkCardNumber();
-    // bool checkCVV();
+    bool checkCVV();
     // bool checkExpDate();
 };
