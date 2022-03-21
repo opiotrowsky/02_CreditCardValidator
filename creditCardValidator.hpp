@@ -21,7 +21,6 @@ public:
         {}
     ~CreditCard() {}
 
-
     bool checkCardNumber();
     bool checkCVV();  
     bool checkExpDate();
