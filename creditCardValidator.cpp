@@ -42,6 +42,14 @@ bool CreditCard::checkCardNumber() {
     
 // }
 
-// bool CreditCard::checkExpDate() {
-    
-// }
+bool CreditCard::checkExpDate() {
+    std::regex datepattern("^(0[1-9]|1[0-2])/([0-9][0-9])$");
+    std::time_t now = std::time(nullptr);
+    auto tm = *std::localtime(&now);
+    std::ostringstream oss;
+    oss << std::put_time(&tm, "%m/%y");
+    std::string today = oss.str();
+    int todm = today[0] * 10 + today[1], expm = expDate_[0] * 10 + expDate_[1], tody = today[3] * 10 + today[4], expy = expDate_[3] * 10 + expDate_[4];
+
+    return (std::regex_match(expDate_, datepattern) and (todm <= expm and tody <= expy));
+}

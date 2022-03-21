@@ -2,6 +2,10 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <sstream>
+#include <regex>
+#include <ctime>
+#include <iomanip>
 
 class CreditCard {
     long intCardNumber_;
@@ -20,5 +24,5 @@ public:
 
     bool checkCardNumber();
     // bool checkCVV();
-    // bool checkExpDate();
+    bool checkExpDate();
 };
