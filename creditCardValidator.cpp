@@ -38,9 +38,10 @@ bool CreditCard::checkCardNumber() {
     return true;
 }
 
-// bool CreditCard::checkCVV() {
-    
-// }
+bool CreditCard::checkCVV() {
+    std::regex cvvpattern("^[0-9]{3,4}$");
+    return (std::regex_match(CVV_, cvvpattern));
+}
 
 bool CreditCard::checkExpDate() {
     std::regex datepattern("^(0[1-9]|1[0-2])/([0-9][0-9])$");

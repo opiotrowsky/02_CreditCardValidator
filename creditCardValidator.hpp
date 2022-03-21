@@ -23,6 +23,6 @@ public:
 
 
     bool checkCardNumber();
-    // bool checkCVV();
+    bool checkCVV();  
     bool checkExpDate();
 };
